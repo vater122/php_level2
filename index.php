@@ -1,10 +1,16 @@
 <?php
 
-require '/models/News.php';
+//FRONT CONTROLLER
+require __DIR__ . '/components/autoload.php';
 
-$neww = new News();
+$ctrl = isset($_GET['ctrl']) ? $_GET['ctrl'] : 'News';
+$act = isset($_GET['act']) ? $_GET['act'] : 'All';
 
-$arr = News::sqlSelect('SELECT * FROM news');
+$controllerClassName = $ctrl . 'Controller';
 
-include '/views/index.php';
+$controller = new $controllerClassName;
+$method = 'action' .$act;
+$controller->$method();
+
+
 

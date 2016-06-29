@@ -1,10 +1,3 @@
-<?php
-include '../models/News.php';
-
-if(isset($_POST['title']) && isset($_POST['content'])){
-    News::sqlInsert($_POST['title'], $_POST['content']);
-}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -48,7 +41,7 @@ if(isset($_POST['title']) && isset($_POST['content'])){
 <div id="templatemo_main_wrapper">
 <div id="templatemo_content_wrapper">
 	<div id="templatemo_content">
-        <form action="index.php" method="post">
+        <form action="index.php?ctrl=Admin&act=Add" method="post">
             <input type="text" name="title" placeholder="Title">
             <input type="text" name="content" placeholder="Content">
             <input type="submit" value="Send">
@@ -60,7 +53,7 @@ if(isset($_POST['title']) && isset($_POST['content'])){
         
         	<span class="comment"><a href="blog_post.html">News</a></span>
         
-            <h2><a href="/php_level2/views/new.php?id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></h2>
+            <h2><a href="/php_level2/index.php?ctrl=News&act=One&id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></h2>
             
           	<strong>Date:</strong> <?php echo $item['date']; ?> | <strong>Author:</strong> <?php echo $item['author']; ?>
 

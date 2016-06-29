@@ -1,10 +1,10 @@
 <?php
-require '../models/News.php';
-
-if(isset($_GET['id'])){
-    $neww = new News();
-    $arr = News::sqlSelectById($_GET['id']);
-}
+//require '../models/News.php';
+//
+//if(isset($_GET['id'])){
+//    $neww = new News();
+//    $arr = News::sqlSelectById($_GET['id']);
+//}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
     <title>Tripod Blog Theme - Free CSS Templates</title>
     <meta name="keywords" content="free css templates, tripod, blog, theme" />
     <meta name="description" content="Tripod - free CSS template provided by templatemo.com" />
-    <link href="../css/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <link href="css/templatemo_style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 
@@ -22,7 +22,7 @@ if(isset($_GET['id'])){
 
         <div id="site_title">
             <h1><a href="/">
-                    <img src="../images/templatemo_logo.png" alt="tripod blog" /></a>
+                    <img src="images/templatemo_logo.png" alt="tripod blog" /></a>
                 <span>free blog template</span>
             </h1>
         </div>
@@ -60,7 +60,7 @@ if(isset($_GET['id'])){
 
                     <strong>Date:</strong> <?php echo $item['date']; ?> | <strong>Author:</strong> <?php echo $item['author']; ?>
 
-                    <a href="#"><img src="../images/templatemo_image_01.jpg" alt="image 1" /></a>
+                    <a href="#"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a>
 
                     <p><?php echo $item['content']; ?></p>
 

@@ -21,9 +21,9 @@ class News extends Article{
     {
         parent::__construct();
     }
-    public static function sqlSelect($query)
+    public static function sqlSelectAll()
     {
-        $result = mysql_query($query);
+        $result = mysql_query('SELECT * FROM news ORDER BY id DESC');
         while(false !== ($row = mysql_fetch_array($result))){
             $arr[] = $row;
         }
@@ -45,6 +45,5 @@ class News extends Article{
     public static function sqlInsert($title, $content)
     {
         mysql_query('INSERT INTO news (title, content) VALUES (\''.$title.'\', \''.$content.'\')');
-        var_dump('INSERT INTO news (title, content) VALUES ('.$title.', '.$content.')');
     }
 }
