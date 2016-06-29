@@ -1,6 +1,8 @@
 <?php
 require '../models/News.php';
+
 if(isset($_GET['id'])){
+    $neww = new News();
     $arr = News::sqlSelectById($_GET['id']);
 }
 ?>

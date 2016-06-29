@@ -2,9 +2,25 @@
 ini_set('display_errors','On');
 error_reporting('E_DEPRECATED');
 
-require '/../components/db_params.php';
+abstract class Article{
+    public function __construct()
+    {
+        mysql_connect('localhost', 'root', '');
 
-class News{
+        mysql_select_db('testing');
+
+        mysql_set_charset( 'utf8' );
+    }
+
+
+
+}
+class News extends Article{
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
     public static function sqlSelect($query)
     {
         $result = mysql_query($query);
@@ -26,8 +42,9 @@ class News{
         return $arr;
     }
 
-    public static function sqlInsert($title, $content, $date)
+    public static function sqlInsert($title, $content)
     {
-
+        mysql_query('INSERT INTO news (title, content) VALUES (\''.$title.'\', \''.$content.'\')');
+        var_dump('INSERT INTO news (title, content) VALUES ('.$title.', '.$content.')');
     }
 }

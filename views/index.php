@@ -1,3 +1,10 @@
+<?php
+include '../models/News.php';
+
+if(isset($_POST['title']) && isset($_POST['content'])){
+    News::sqlInsert($_POST['title'], $_POST['content']);
+}
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -41,6 +48,11 @@
 <div id="templatemo_main_wrapper">
 <div id="templatemo_content_wrapper">
 	<div id="templatemo_content">
+        <form action="index.php" method="post">
+            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="content" placeholder="Content">
+            <input type="submit" value="Send">
+        </form>
 
         <?php foreach($arr as $item): ?>
             <!-- start Блок новости -->
