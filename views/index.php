@@ -50,19 +50,19 @@
         <?php foreach($arr as $item): ?>
             <!-- start Блок новости -->
     	<div class="post_section"><span class="bottom"></span>
-        
+
         	<span class="comment"><a href="blog_post.html">News</a></span>
-        
-            <h2><a href="/php_level2/index.php?ctrl=News&act=One&id=<?php echo $item['id']; ?>"><?php echo $item['title']; ?></a></h2>
-            
-          	<strong>Date:</strong> <?php echo $item['date']; ?> | <strong>Author:</strong> <?php echo $item['author']; ?>
+
+            <h2><a href="/php_level2/index.php?ctrl=News&act=One&id=<?php echo $item->id; ?>"><?php echo $item->title; ?></a></h2>
+
+          	<strong>Date:</strong> <?php echo $item->date; ?> | <strong>Author:</strong> <?php echo $item->author; ?>
 
             <a href="#"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a>
-            
-            <p><?php echo $item['content']; ?></p>
+
+            <p><?php echo $item->content; ?></p>
 
           <div class="cleaner"></div>
-             <div class="button float_r"><a href="/php_level2/views/new.php?id=<?php echo $item['id']; ?>" class="more">Read more</a></div>
+             <div class="button float_r"><a href="/php_level2/views/new.php?id=<?php echo $item->id; ?>" class="more">Read more</a></div>
 			<div class="cleaner"></div>
     </div>
         <!-- end Блок новости -->

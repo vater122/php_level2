@@ -56,13 +56,13 @@
 
                     <span class="comment"><a href="blog_post.html">News</a></span>
 
-                    <h2><a href="#"><?php echo $item['title']; ?></a></h2>
+                    <h2><a href="#"><?php echo $item->title; ?></a></h2>
 
-                    <strong>Date:</strong> <?php echo $item['date']; ?> | <strong>Author:</strong> <?php echo $item['author']; ?>
+                    <strong>Date:</strong> <?php echo $item->date; ?> | <strong>Author:</strong> <?php echo $item->author; ?>
 
                     <a href="#"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a>
 
-                    <p><?php echo $item['content']; ?></p>
+                    <p><?php echo $item->content; ?></p>
 
                     <div class="cleaner"></div>
                     <div class="button float_r"><a href="blog_post.html" class="more">Read more</a></div>

@@ -5,9 +5,7 @@ class NewsController{
 
     public function actionAll()
     {
-        $obj = new News();
-        $news = News::sqlSelectAll();
-        
+        $news = News::findAll();
         $view = new View();
         $view->arr = $news;
         $view->display('index.php');
@@ -16,9 +14,8 @@ class NewsController{
 
     public function actionOne()
     {
-        $obj = new News();
         $id = $_GET['id'];
-        $news = News::sqlSelectById($id);
+        $news = News::findById($id);
 
         $view = new View();
         $view->arr = $news;
