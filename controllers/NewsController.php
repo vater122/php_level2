@@ -6,8 +6,11 @@ class NewsController{
     public function actionAll()
     {
         $obj = new News();
-        $arr = News::sqlSelectAll();
-        include __DIR__ . "/../views/index.php";
+        $news = News::sqlSelectAll();
+        
+        $view = new View();
+        $view->arr = $news;
+        $view->display('index.php');
 
     }
 
@@ -15,8 +18,11 @@ class NewsController{
     {
         $obj = new News();
         $id = $_GET['id'];
-        $arr = News::sqlSelectById($id);
-        include __DIR__ . "/../views/new.php";
+        $news = News::sqlSelectById($id);
+
+        $view = new View();
+        $view->arr = $news;
+        $view->display('new.php');
     }
 
 }
