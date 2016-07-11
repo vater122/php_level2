@@ -21,14 +21,14 @@
     <div id="templatemo_header">
 
         <div id="site_title">
-            <h1><a href="/">
+            <h1><a href="/php_level2/index.php">
                     <img src="images/templatemo_logo.png" alt="tripod blog" /></a>
                 <span>free blog template</span>
             </h1>
         </div>
 
         <div id="templatemo_rss">
-            <a href="" target="_parent">SUBSCRIBE<br /><span>OUR FEED</span></a>
+            <a href="/php_level2/index.php" target="_parent">SUBSCRIBE<br /><span>OUR FEED</span></a>
         </div>
 
     </div> <!-- end of header -->
@@ -65,7 +65,13 @@
                     <p><?php echo $item->content; ?></p>
 
                     <div class="cleaner"></div>
-                    <div class="button float_r"><a href="blog_post.html" class="more">Read more</a></div>
+                    <div class="button float_r">
+                    <form action="/php_level2/index.php?ctrl=Admin&act=Update&id=<?php echo $item->id; ?>" method="post">
+                        <input type="text" value="" placeholder="Title..." name="title">
+                        <input type="text" value="" placeholder="Content..." name="content">
+                        <input type="submit" value="Изменить">
+                    </form>
+                    </div>
                     <div class="cleaner"></div>
                 </div>
                 <!-- end Блок новости -->

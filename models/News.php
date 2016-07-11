@@ -41,7 +41,7 @@ abstract class AbstractModel
         $columns = array_keys($this->data);
         $data = [];
         foreach ($columns as $col) {
-            $data[':' . $col] =$this->data[$col];
+            $data[':' . $col] = $this->data[$col];
         }
         $sql = 'INSERT INTO ' . static::$table . '
           (' . implode(', ', $columns) . ')
@@ -54,19 +54,23 @@ abstract class AbstractModel
 
     public static function findByColumn($column, $value)
     {
-        $sql = 'SELECT * FROM ' . static::$table . ' WHERE '.$column. '=:'.$column;
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' . $column . '=:' . $column;
         $db = new Db();
-        return $db->query($sql, [':'.$column => $value]);
+        return $db->query($sql, [':' . $column => $value]);
     }
 
-    public function update()
+    public function update($id)
     {
-
+        $sql = 'UPDATE news SET title=:title,content=:content WHERE id=:id';
+        $db = new Db();
+        $db->execute($sql, [':id' => $id , ':title' => $_POST['title'], ':content' => $_POST['content']]);
     }
 
-    public function delete()
+    public function delete($id)
     {
-
+        $sql = 'DELETE FROM ' . static::$table . ' WHERE id=:id';
+        $db = new Db();
+        $db->execute($sql, [':id' => $id]);
     }
 
 
@@ -82,11 +86,6 @@ abstract class AbstractModel
  */
 class News extends AbstractModel
 {
-
     protected static $table = 'news';
 
-    public static function sqlInsert($title, $content)
-    {
-        mysql_query('INSERT INTO news (title, content) VALUES (\'' . $title . '\', \'' . $content . '\')');
-    }
 }
