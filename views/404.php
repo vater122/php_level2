@@ -1,11 +1,3 @@
-<?php
-//require '../models/News.php';
-//
-//if(isset($_GET['id'])){
-//    $neww = new News();
-//    $arr = News::sqlSelectById($_GET['id']);
-//}
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -37,7 +29,7 @@
 
         <ul>
             <li><a href="index.html" class="current">Home</a></li>
-            <li><a href="index.php?ctrl=Admin&act=ViewLog">Errors Log</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -50,32 +42,18 @@
     <div id="templatemo_content_wrapper">
         <div id="templatemo_content">
 
-            <?php foreach($arr as $item): ?>
                 <!-- start Блок новости -->
                 <div class="post_section"><span class="bottom"></span>
 
-                    <span class="comment"><a href="blog_post.html">News</a></span>
-
-                    <h2><a href="#"><?php echo $item->title; ?></a></h2>
-
-                    <strong>Date:</strong> <?php echo $item->date; ?> | <strong>Author:</strong> <?php echo $item->author; ?>
-
-                    <a href="#"><img src="images/templatemo_image_01.jpg" alt="image 1" /></a>
-
-                    <p><?php echo $item->content; ?></p>
+                    <h1>404</h1>
+                    <h3>Извините, по Вашему запросу ничего не найдено(</h3>
 
                     <div class="cleaner"></div>
                     <div class="button float_r">
-                    <form action="/php_level2/index.php?ctrl=Admin&act=Update&id=<?php echo $item->id; ?>" method="post">
-                        <input type="text" value="" placeholder="Title..." name="title">
-                        <input type="text" value="" placeholder="Content..." name="content">
-                        <input type="submit" value="Изменить">
-                    </form>
                     </div>
                     <div class="cleaner"></div>
                 </div>
                 <!-- end Блок новости -->
-            <?php endforeach; ?>
 
             <div class="cleaner_h40"><!-- a spacing between 2 posts --></div>
 

@@ -30,4 +30,28 @@ class AdminController
         }
         header("Location: /php_level2/index.php");
     }
+
+    public function actionViewLog()
+    {
+        $data = [];
+        $view = new View();
+        if(file_exists('log.txt')) {
+            // Открыть текстовый файл
+            $f = fopen("log.txt", "r");
+
+            // Читать построчно до конца файла
+            while (!feof($f)) {
+                $data[] = fgets($f);
+            }
+
+            // Закрыть текстовый файл
+            fclose($f);
+        }else{
+            $data[]='Log file is empty!';
+        }
+
+
+        $view->arr = $data;
+        $view->display('errlog.php');
+    }
 }

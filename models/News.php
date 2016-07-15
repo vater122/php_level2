@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 'On');
-error_reporting('E_DEPRECATED');
+//error_reporting('E_DEPRECATED');
 
 
 abstract class AbstractModel
@@ -22,11 +22,11 @@ abstract class AbstractModel
 
     public static function findAll()
     {
-        $class = get_called_class();
-        $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC';
-        $db = new Db();
-        $db->setClassName($class);
-        return $db->query($sql);
+            $class = get_called_class();
+            $sql = 'SELECT * FROM ' . static::$table . ' ORDER BY id DESC';
+            $db = new Db();
+            $db->setClassName($class);
+            return $db->query($sql);
     }
 
     public static function findById($id)
@@ -54,9 +54,9 @@ abstract class AbstractModel
 
     public static function findByColumn($column, $value)
     {
-        $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' . $column . '=:' . $column;
+        $sql = 'SELECT * FROM ' . static::$table . ' WHERE ' . $column . '=:value';
         $db = new Db();
-        return $db->query($sql, [':' . $column => $value]);
+        return $db->query($sql, [':value' => $value]);
     }
 
     public function update($id)

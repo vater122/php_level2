@@ -1,0 +1,5 @@
+15.07.16 [01:42:07] -> 404  C:\wamp\www\php_level2\controllers\NewsController.php
+15.07.16 [03:02:38] -> 404  C:\wamp\www\php_level2\controllers\NewsController.php
+15.07.16 [03:02:39] -> 404  C:\wamp\www\php_level2\controllers\NewsController.php
+15.07.16 [03:02:40] -> 404  C:\wamp\www\php_level2\controllers\NewsController.php
+15.07.16 [03:02:41] -> 404  C:\wamp\www\php_level2\controllers\NewsController.php

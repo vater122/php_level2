@@ -29,7 +29,7 @@
     
         <ul>
             <li><a href="index.html" class="current">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="index.php?ctrl=Admin&act=ViewLog">Errors Log</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>    	
